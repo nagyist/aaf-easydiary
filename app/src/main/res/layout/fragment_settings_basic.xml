@@ -26,6 +26,32 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_markdown_setting"
+            style="@style/AppCard.Settings">
+            <LinearLayout
+                style="@style/LinearLayoutVertical">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.simplemobiletools.commons.views.MyTextView
+                        android:text="Markdown Syntax"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        style="@style/SettingsTitle" />
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switch_markdown_setting"
+                        android:clickable="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+                <com.simplemobiletools.commons.views.MyTextView
+                    android:text="Markdown Syntax 옵션을 활성화 시키면 다이어리 작성 시 MarkDown 문법을 이용하여 다양한 서식을 입력 할 수 있습니다."
+                    style="@style/SettingsSummary" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/enable_welcome_dashboard_popup"
             style="@style/AppCard.Settings">
             <LinearLayout
