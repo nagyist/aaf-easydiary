@@ -35,7 +35,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <com.simplemobiletools.commons.views.MyTextView
-                        android:text="Markdown Syntax"
+                        android:text="@string/markdown_setting_title"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         style="@style/SettingsTitle" />
@@ -46,7 +46,7 @@
                         android:layout_height="wrap_content" />
                 </LinearLayout>
                 <com.simplemobiletools.commons.views.MyTextView
-                    android:text="Markdown Syntax 옵션을 활성화 시키면 다이어리 작성 시 MarkDown 문법을 이용하여 다양한 서식을 입력 할 수 있습니다."
+                    android:text="@string/markdown_setting_summary"
                     style="@style/SettingsSummary" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
