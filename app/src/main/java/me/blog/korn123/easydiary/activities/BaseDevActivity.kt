@@ -26,6 +26,28 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.browser.customtabs.CustomTabsIntent
 import androidx.cardview.widget.CardView
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -42,6 +64,7 @@ import kotlinx.coroutines.*
 import me.blog.korn123.commons.utils.BiometricUtils.Companion.startListeningBiometric
 import me.blog.korn123.commons.utils.BiometricUtils.Companion.startListeningFingerprint
 import me.blog.korn123.commons.utils.EasyDiaryUtils
+import me.blog.korn123.commons.utils.FontUtils
 import me.blog.korn123.easydiary.R
 import me.blog.korn123.easydiary.databinding.ActivityBaseDevBinding
 import me.blog.korn123.easydiary.enums.DialogMode
@@ -464,6 +487,12 @@ open class BaseDevActivity : EasyDiaryActivity() {
                 )
             )
         }
+
+        mBinding.composeView.setContent {
+            MaterialTheme {
+                PlantDetailDescription(this)
+            }
+        }
     }
 
     private fun setupNotification() {
@@ -867,8 +896,36 @@ data class NotificationInfo(
 //    }
 //    println(result)
 //}
+@Composable
+fun PlantDetailDescription(context: Context) {
+    Card(
+        shape = RoundedCornerShape(4.dp),
+        colors = CardDefaults.cardColors(Color(context.config.backgroundColor)),
+        modifier = Modifier.padding(3.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(15.dp)
+        ) {
+            Text(
+                text = "Hello Compose",
+                style = TextStyle(
+                    color = Color(context.config.textColor)
+
+                ),
+                fontFamily = FontFamily(FontUtils.getCommonTypeface(context)!!)
+            )
+        }
+    }
+}
 
 
+@Preview
+@Composable
+private fun PlantDetailDescriptionPreview() {
+    MaterialTheme {
+        PlantDetailDescription(LocalContext.current)
+    }
+}
 
 
 

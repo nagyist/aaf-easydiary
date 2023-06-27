@@ -40,6 +40,11 @@
                 android:paddingRight="@dimen/component_margin_small"
                 android:paddingBottom="35dp"
                 >
+
+                <androidx.compose.ui.platform.ComposeView
+                    android:id="@+id/compose_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
                 <androidx.cardview.widget.CardView
                     android:orientation="vertical"
                     style="@style/AppCard.Settings">
